@@ -24,6 +24,7 @@ if e:
                     break
                 outfile.write(cipher.decrypt(chunk))
             outfile.truncate(int(size))
+    print('Done decrypting')
 else:
     i = Random.get_random_bytes(128)
     KEY = SHA256.new(i)
@@ -43,3 +44,4 @@ else:
                 elif len(chunk) % 16 != 0:
                     chunk += b' ' * (16 - (len(chunk) % 16))
                 outfile.write(cipher.encrypt(chunk))
+    print('Done encrypting')
