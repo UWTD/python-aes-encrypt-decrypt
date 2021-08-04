@@ -8,7 +8,7 @@ f = sys.argv[1]
 e = False
 
 if f.endswith('.uwcrypted'):
-        e = True
+    e = True
 
 if e:
     with open(f, 'rb') as infile:
